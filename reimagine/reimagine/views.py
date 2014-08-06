@@ -21,12 +21,46 @@ def profile(request):
         context['auth_token'] = response.read()
         context['access_token'] = decoded['access_token']
         context['expires_in'] = decoded['expires_in']
-        url_getBasics = "https://api.linkedin.com/v1/people/~:(firstName,lastName)?oauth2_access_token=" + decoded['access_token'] + "&format=json"
+        url_getBasics = "https://api.linkedin.com/v1/people/~:(id,firstName,lastName,headline,public-profile-url,positions,summary,skills,interests,languages,educations,volunteer,three-current-positions,three-past-positions,honors-awards)?oauth2_access_token=" + decoded['access_token'] + "&format=json"
         #basicInfo = urllib2.urlopen(url_getBasics).read()
         req1 = urllib2.Request(url_getBasics)
         response1 = urllib2.urlopen(req1)
-        the_page1 = response1.read()
-        context['basicInfo'] = the_page1
+        #the_page1 = response1.read()
+        decoded_info = json.loads(response1.read())
+        #context['basicInfo'] = the_page1
+        context['firstName'] = decoded_info['firstName']
+        context['lastName'] = decoded_info['lastName']
+        context['headline'] = decoded_info['headline']
+        context['id'] = decoded_info['id']
+        context['publicProfileUrl'] = decoded_info['publicProfileUrl']
+        context['summary'] = decoded_info['summary']
+        #context['educations'] = decoded_info['educations']
+
+        context['educations'] = ""
+
+        for rows in decoded_info['educations']['values']:
+            try:
+                rows['degree']
+            except KeyError:
+                rows['degree'] = ""
+
+            try:
+                rows['fieldOfStudy']
+            except KeyError:
+                rows['fieldOfStudy'] = ""
+
+            context['educations'] += rows['schoolName'] + ", " + rows['degree'] + ", " + rows['fieldOfStudy'] + " (" + \
+                                    str(rows['startDate']['year']) + "-" + str(rows['endDate']['year']) + ")<br>\n"
+
+
+
+        context['skills'] = ""
+        for rows in decoded_info['skills']['values']:
+            context['skills'] += rows['skill']['name'] + ", "
+
+        context['languages'] = ""
+        for rows in decoded_info['languages']['values']:
+            context['languages'] += rows['language']['name'] + " "
     else:
         context['auth_url'] = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=" + LINKEDIN_API_KEY + "&state=dksaddwkeke2i489873893eujklsdkjskljd&redirect_uri=http://127.0.0.1:8000/profile/"
         ##context['auth_url'] = request.GET.get('message')

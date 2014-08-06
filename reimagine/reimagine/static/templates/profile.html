@@ -1,14 +1,238 @@
-<html>
-<head>
-    <title>Profile Page</title>
-</head>
-<body>
-<h1>Profile Page</h1>
+<!DOCTYPE html>
+<html><head>
+  <title>IMAGINE</title>
 
-<a href="{{ auth_url }}">Authorize LinkedIn</a>
 
-<h3>{{ access_token }}</h3>
-<h3>{{ expires_in }}</h3>
-<h3>{{ basicInfo }}</h3>
-</body>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="https://dl.dropboxusercontent.com/u/48325070/bootstrap.css" rel="stylesheet">
+    <link href="https://dl.dropboxusercontent.com/u/48325070/bootstrap-responsive.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/static/js/html5shiv.js"></script>
+    <![endif]-->
+
+
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/ico/apple-touch-icon-114-precomposed.png">
+     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png">
+     <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">
+     <link rel="shortcut icon" href="/static/ico/favicon.png">
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://dl.dropboxusercontent.com/u/48325070/bootstrap.js"></script>
+  </head>
+
+  </head>
+  <body>
+
+
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="logo" style="background-image:url('https://dl.dropboxusercontent.com/u/48325070/logo.png');"></div>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="http://imagine.ops.ag.com/en/">Home</a></li>
+                <li><a href="http://imagine.ops.ag.com/en/about-ag/">About AG</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">#WHQ <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://imagine.ops.ag.com/en/jacobs-menu/">Jacobs Menu</a></li>
+                    <li><a href="http://imagine.ops.ag.com/en/starbucks/">Starbucks Line</a></li>
+                    <li><a href="http://imagine.ops.ag.com/en/important-phone-s/">Important Phone #'s</a></li>
+                    <li><a href="http://meet.ag.com">Meetings Rooms</a></li>
+                    <li><a href="http://imagine.ops.ag.com/en/new-whq/">New WHQ News</a></li>
+                    <li><a href="http://imagine.ops.ag.com/en/whq/">More...</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">What I need <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="https://www.employeebenefitswebsite.com/amgreetings/">Benefits</a></li>
+                    <li><a href="http://imagine.ops.ag.com/expense-reports/">Expense Reports</a></li>
+                    <li><a href="https://www.employeebenefitswebsite.com/amgreetings/index.php?box=Wellness&section=Wellness&page=Landing%20page&type=w&ref=wellness&img=">Wellness</a></li>
+                    <li><a href="http://imagineu.amgreetings.com/">Training</a></li>
+                    <li><a href="http://imagine.ops.ag.com/travel/">Travel</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://imagine.ops.ag.com/en/departments/">Departments</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">People <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+
+                    <li><a href="http://imagine.ops.ag.com/profiles/">Bios</a></li>
+                    <li><a href="http://imagine.ops.ag.com/en/phone-directory/">Phone Directory</a></li>
+                    <li><a href="http://maps.ag.com/">Maps</a></li>
+                  </ul>
+                </li>
+                <li><a href="http://imagine.ops.ag.com/frequently-asked-questions">FAQ</a></li>
+              </ul>
+
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+
+    <div class="container-fluid">
+
+
+
+<div class="container">
+   <div class="row-fluid">
+      <div class="span2 text-center">
+            <img src="http://gravatar.com/avatar/beb2bdabcc0882d47952e79fac02accc"  class="text-center">
+            <p class="text-center"><small>Change your avatar at <a href="http://www.gravatar.com">gravatar.com</a></small></p>
+		</div>
+
+      <div class="span10">
+          <div class="pull-right">
+            <a href="{{ auth_url }}"><p class="text-right"><small>Connect your account to</small></p><img src="https://dl.dropboxusercontent.com/u/48325070/Linkedin_Logo.jpg" width="125" height="34">
+            </a>
+          </div>
+            <h2>
+               Andriy Kucher
+            </h2>
+
+            <h3>Details:</h3>
+            <ul>
+               <li><strong>Email:</strong> akucher@ag.com</li>
+               <li><strong>Phone:</strong> 111-222-3333</li>
+               <li><strong>Department: AGI</strong> </li>
+               <li><strong>Manager: Mark Prugh</strong> </li>
+               <li><strong>Location: Cleveland</strong> </li>
+            </ul>
+
+            <h3>About Me:</h3>
+            {% if headline %}
+            <h6>{{ headline }}</h6>
+            {% endif %}
+            {% if summary %}
+            <h5>Summary</h5>
+            {{ summary }}
+            {% else %}
+            <p class="muted">No description wriiten yet. <a href="/en/profiles/usag/mavila/edit/" class="muted">Add "About Me" now.</a></p>
+            {% endif %}
+
+            <h3>Skills:</h3>
+            {% if skills %}
+            {{ skills }}
+            {% else %}
+            <p class="muted">No skills selected yet. <a href="/en/profiles/usag/mavila/edit/" class="muted">Add skills now.</a></p>
+            {% endif %}
+
+            {% if educations %}
+            <h3>Education:</h3>
+            {{ educations|safe }}
+            {% endif %}
+
+            {% if languages %}
+            <h3>Education:</h3>
+            {{ languages }}
+            {% endif %}
+
+            {% if publicProfileUrl %}
+            <h3>Links:</h3>
+            <a href="{{ publicProfileUrl }}">{{ firstName }}'s LinkedIn Page</a>
+            {% endif %}
+
+      </div>
+   </div>
+</div>
+
+    </div> <!-- /container -->
+
+
+  <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner navfoot">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Websites <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://www.americangreetings.com">American Greetings</a></li>
+                    <li><a href="http://www.cardstore.com">Cardstore</a></li>
+                    <li><a href="http://www.bluemountain.com">Blue Mountain</a></li>
+                    <li><a href="http://www.justWink.com">justWink</a></li>
+                    <li><a href="http://www.jacquielawson.com">Jacquie Lawson</a></li>
+                    <li><a href="http://www.egreetings.com">eGreetings</a></li>
+                    <li><a href="http://www.taylorswiftcards.com">Taylor Swift Greeting Cards</a></li>
+                    <li><a href="http://www.mustachewisdom.com">Mustache Wisdom</a></li>
+                    <li><a href="http://www.sillyfacefun.com">Silly Face Fun</a></li>
+                  </ul>
+                </li>
+
+						<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blogs <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="http://www.bluemountain.com/blog/">Blue Mountain</a></li>
+                    <li><a href="http://stayinspired365.com/">Stay Inspired</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+                            <form id="search_form" method="get" action="/en/search/" class="navbar-search"><input type="text" name="q" id="id_q" class="form-search input-small"/><input type="submit" value="Search" class="btn btn-medium btn-secondary"> </form>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+
+      <footer>
+        <p class="text-center">&copy; American Greetings 2013</p>
+      </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+  </body>
 </html>
+
