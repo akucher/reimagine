@@ -115,10 +115,12 @@
 		</div>
 
       <div class="span10">
+          {% if flag = True %}
           <div class="pull-right">
             <a href="{{ auth_url }}"><p class="text-right"><small>Connect your account to</small></p><img src="https://dl.dropboxusercontent.com/u/48325070/Linkedin_Logo.jpg" width="125" height="34">
             </a>
           </div>
+          {% endif %}
             <h2>
                Andriy Kucher
             </h2>
@@ -134,6 +136,7 @@
 
             <h3>About Me:</h3>
             {% if headline %}
+            <h5>Headline</h5>
             <h6>{{ headline }}</h6>
             {% endif %}
             {% if summary %}
