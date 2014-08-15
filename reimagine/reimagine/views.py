@@ -44,19 +44,15 @@ def profile(request):
             if entry.token:
                 context['flag'] = False
                 url_getbasics = "https://api.linkedin.com/v1/people/~:(id,firstName,lastName,headline,public-profile-url,positions,summary,skills,interests,languages,educations,volunteer,three-current-positions,three-past-positions,honors-awards)?oauth2_access_token=" + entry.token + "&format=json"
-                #basicInfo = urllib2.urlopen(url_getBasics).read()
                 req1 = urllib2.Request(url_getbasics)
                 response1 = urllib2.urlopen(req1)
-                #the_page1 = response1.read()
                 decoded_info = json.loads(response1.read())
-                #context['basicInfo'] = the_page1
                 context['firstName'] = decoded_info['firstName']
                 context['lastName'] = decoded_info['lastName']
                 context['headline'] = decoded_info['headline']
                 context['id'] = decoded_info['id']
                 context['publicProfileUrl'] = decoded_info['publicProfileUrl']
                 context['summary'] = decoded_info['summary']
-                #context['educations'] = decoded_info['educations']
 
                 context['educations'] = ""
 
